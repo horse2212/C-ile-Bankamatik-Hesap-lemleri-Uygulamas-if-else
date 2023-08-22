@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace whileornek
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int hesap = 0;
+            int secim;
+            do
+            {     
+                Console.WriteLine(" 1-Hesap Göster n 2-Para Yatırma n 3-Para Çekme n 4-Çıkış");
+                secim = Convert.ToInt16(Console.ReadLine());
+ 
+                if (secim ==1)
+                {
+                Console.WriteLine("Hesabınızda " + hesap + "TL bulunmaktadır.");
+                Console.ReadLine();
+                }
+                else if (secim == 2)
+                {
+                    Console.WriteLine("Kaç para yatırmak istiyorsunuz?");
+                    int yatirilan = Convert.ToInt16(Console.ReadLine());
+                    hesap = hesap + yatirilan;
+                }
+                else if (secim == 3)
+                {
+                    Console.WriteLine("Kaç para çekmek istiyorsunuz?");
+                    int cekim = Convert.ToInt16(Console.ReadLine());
+                     
+                    if (cekim>hesap)
+                {
+                    Console.WriteLine("Yeterli bakiyeniz yoktur.");
+                }
+                    else hesap = hesap - cekim; 
+                }
+ 
+ 
+            }
+            while (secim != 4);
+             
+        }
+    }
+}
